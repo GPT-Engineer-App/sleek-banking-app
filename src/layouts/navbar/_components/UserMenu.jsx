@@ -7,23 +7,32 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { CircleUser } from "lucide-react";
+import { CircleUser, Settings, HelpCircle, LogOut } from "lucide-react";
 
 export const UserMenu = () => (
   <DropdownMenu>
     <DropdownMenuTrigger asChild>
-      <Button variant="secondary" size="icon" className="rounded-full">
+      <Button variant="ghost" size="icon" className="rounded-full">
         <CircleUser className="h-5 w-5" />
         <span className="sr-only">Toggle user menu</span>
       </Button>
     </DropdownMenuTrigger>
-    <DropdownMenuContent align="end">
+    <DropdownMenuContent align="end" className="w-56">
       <DropdownMenuLabel>My Account</DropdownMenuLabel>
       <DropdownMenuSeparator />
-      <DropdownMenuItem>Settings</DropdownMenuItem>
-      <DropdownMenuItem>Support</DropdownMenuItem>
+      <DropdownMenuItem>
+        <Settings className="mr-2 h-4 w-4" />
+        <span>Settings</span>
+      </DropdownMenuItem>
+      <DropdownMenuItem>
+        <HelpCircle className="mr-2 h-4 w-4" />
+        <span>Support</span>
+      </DropdownMenuItem>
       <DropdownMenuSeparator />
-      <DropdownMenuItem>Logout</DropdownMenuItem>
+      <DropdownMenuItem>
+        <LogOut className="mr-2 h-4 w-4" />
+        <span>Logout</span>
+      </DropdownMenuItem>
     </DropdownMenuContent>
   </DropdownMenu>
 );
