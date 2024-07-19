@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Package2 } from "lucide-react";
+import { Menu } from "lucide-react";
 import { NavItem } from "./NavItem";
+import { Logo } from "@/components/Logo";
 
 export const MobileSheet = ({ navItems }) => (
   <Sheet>
@@ -11,14 +12,14 @@ export const MobileSheet = ({ navItems }) => (
         <span className="sr-only">Toggle navigation menu</span>
       </Button>
     </SheetTrigger>
-    <SheetContent side="left">
+    <SheetContent side="left" className="bg-white">
       <nav className="grid gap-6 text-lg font-medium">
         <NavItem
           to="/"
           className="flex items-center gap-2 text-lg font-semibold"
         >
-          <Package2 className="h-6 w-6" />
-          <span className="sr-only">Acme Inc</span>
+          <Logo className="h-8 w-8" />
+          <span>Banking App</span>
         </NavItem>
         {navItems.map((item) => (
           <NavItem key={item.to} to={item.to}>
